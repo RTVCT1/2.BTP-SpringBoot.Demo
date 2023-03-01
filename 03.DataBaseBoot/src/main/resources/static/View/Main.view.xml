@@ -1,0 +1,55 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+		  xmlns="sap.m"
+		  xmlns:t="sap.ui.table"
+		  xmlns:f="sap.ui.layout.form"
+ 		  xmlns:l ="sap.ui.layout"
+ 		  xmlns:core="sap.ui.core"
+		  controllerName="com.btp.Controller.Main">
+	<Page title= "Demonstration of Spring Rest Services">
+		<Button text="LoadData" press="onLoadData"/>
+		<f:SimpleForm id=idSimpleForm">
+			<f:content>
+				<Label text="Company Name"/>
+				<Input id="idCompanyName" value="{/postPayload/companyName}"/>
+				<Label text="First Name"/>
+				<Input id="idFirstName" value="{/postPayload/firstName}"/>
+				<Label text="Last Name"/>
+				<Input id="idLastName" value="{/postPayload/lastName}"/>
+				<Label text="Email"/>
+				<Input id="idEmail" value="{/postPayload/email}"/>
+				<Label text="WebSite"/>
+				<Input id="idwebsite" value="{/postPayload/website}"/>
+				<Label text="GST Number"/>
+				<Input id="idGSTNo" value="{/postPayload/gstNo}"/>
+			</f:content>
+		</f:SimpleForm>
+		<t:Table id="idTable">
+			<t:columns>
+				<t:Column>
+					<t:label><Text text="Company Name"/></t:label>
+					<t:template>
+						<Text text="{companyName}"/>
+					</t:template>
+				</t:Column>
+				<t:Column>
+					<t:label ><Text text="Name"/></t:label>
+					<t:template>
+						<Text text="{firstName} {lastName}"/>
+					</t:template>
+				</t:Column>
+				<t:Column>
+					<t:label > <Text text="Email Id"/></t:label>
+					<t:template>
+						<Text text="{email}"/>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+		<footer>
+			<Toolbar>
+				<Button text="Save" press="onSave"/>
+			</Toolbar>
+		</footer>
+	</Page>		  
+		  
+</mvc:View>
